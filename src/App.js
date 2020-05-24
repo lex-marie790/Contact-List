@@ -1,25 +1,38 @@
 // step one import react
-import React from "react";
+import React, { useState, useEffect } from "react";
 //step 3 import css
 import "./styles.css";
 
 import ContactCard from "./Components/ContactCard";
 import contact from "./Components/contacts"
-import contacts from "./Components/contacts";
+// import contacts from "./Components/contacts";
 
 //step 2 declare a function, export default App
 //step 3 add div and h1 tags - JSX Javascript XML
 
 const App = () => {
 
+  const [contacts, setContacts] = useState([]);
+
+  useEffect(() => {
+    fetch("https://randomuser.me/api/?results=3")
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        // store results array in state to render info
+        setContacts(data.results);
+      });
+  }, []); // [] - dependency array, useEffect function only runs when component is loaded for the first timee
+
+
   return (
     <>
     {contacts.map(contact=> (
       <ContactCard
-        avatar = "https://via.placeholder.com/150"
-        name={contact.name}
+        avatar = {contact.picture.large}
+        name={contact.name.first + " " + contact.name.last}
         email={contact.email}
-        age={contact.age}
+        age={contact.dob.age}
       />
     ))}
     </>

@@ -1,5 +1,7 @@
 // step one import react
 import React from "react";
+//step 3 import css
+import "./styles.css";
 
 //step 2 declare a function, export default App
 //step 3 add div and h1 tags - JSX Javascript XML
@@ -13,14 +15,14 @@ const App = () => {
   }
 
   return (
-    <div> 
-      <h1>
-        This is our React World
-      </h1>
-      <h2 onClick = {handleClick}>
-        {message} 
-      </h2>
-    </div>
+   <div className="contact-card">
+     <img src="https://via.placeholder.com/150" alt="profile" />
+     <div className="user-details">
+       <p>Name: Jenny Han</p>
+       <p>Email: Jenny.han@notreal.com</p>
+       <p>Age: 25</p>
+     </div>
+   </div>
   ); //this is whats returned by the component & contains markup, converted to html
 
 }

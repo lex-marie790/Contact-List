@@ -12,9 +12,24 @@ const App = () => {
 
   return (
     <>
-    <ContactCard />
-    <ContactCard />
-    <ContactCard />
+    <ContactCard
+      avatar = "https://via.placeholder.com/150"
+      name="Jenny Han"
+      email="jenny.han@notreal.com"
+      age={25}
+    />
+    <ContactCard 
+      avatar = "https://via.placeholder.com/150"
+      name="Jason Long"
+      email="jason.long@notreal.com"
+      age={45}
+    />
+    <ContactCard
+      avatar = "https://via.placeholder.com/150"
+      name="Peter Pan"
+      email="peter.pan@notreal.com"
+      age={100}
+    />
     </>
   );
 }
@@ -30,3 +45,4 @@ export default App;
 // {} means execute as JS
 // index.html is the skeleton, loads when the app starts and imports App component
 // state: basically an object that represents a part of an app that can change, which the UI “reacts” to. State can be anything; objects, booleans, arrays, strings or integers
+// Props: defined using quoted text (e.g. name=“Jenny Han”) or within braces (e.g. age={25}. If we leave out the braces for anything other than strings things start to break — age=25 );
